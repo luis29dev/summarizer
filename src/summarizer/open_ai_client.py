@@ -1,5 +1,6 @@
 import os
 from dotenv import load_dotenv
+from openai import OpenAI
 
 
 def validate_api_key():
@@ -20,3 +21,4 @@ def validate_api_key():
         print("An API key was found, but it looks like it might have space or tab characters at the start or end ")
     else:
         print("API key found and looks good so far!")
+
