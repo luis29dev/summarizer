@@ -6,8 +6,14 @@ import requests
 from bs4 import BeautifulSoup
 
 
-# Validate the API key before proceeding
-validate_api_key()
+def main():
 
-# validate gpt chat
-validation_gpt_chat()
+    # Validate the API key before proceeding
+    validate_api_key()
+
+    # validate gpt chat
+    validation_gpt_chat()
+
+
+if __name__ == "__main__":
+    main()
