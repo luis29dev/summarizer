@@ -1,9 +1,7 @@
-import os
 from src.summarizer.openai_client import validate_api_key
 from src.summarizer.openai_client import validation_gpt_chat
-from dotenv import load_dotenv
-import requests
-from bs4 import BeautifulSoup
+from src.summarizer.scrapers import Website
+
 
 
 def main():
@@ -15,6 +13,12 @@ def main():
 
         # validate gpt chat
         validation_gpt_chat()
+
+        # Test the Website scraper
+        url = "https://cnn.com"
+        website = Website(url)
+        print(f"Title: {website.title}")
+
 
     except Exception as e:
         print(f"An error occurred: {e}")
