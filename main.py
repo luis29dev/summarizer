@@ -1,6 +1,7 @@
 from src.summarizer.openai_client import validate_api_key
 from src.summarizer.openai_client import validation_gpt_chat
 from src.summarizer.scrapers import Website
+from src.summarizer.openai_client import summarize
 
 
 
@@ -18,6 +19,11 @@ def main():
         url = "https://cnn.com"
         website = Website(url)
         print(f"Title: {website.title}")
+
+        # Summarize the website
+        summary = summarize(url)
+        print("\nSummary:\n")
+        print(summary)
 
 
     except Exception as e:

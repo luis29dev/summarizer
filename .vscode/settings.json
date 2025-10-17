@@ -4,6 +4,7 @@
     "python-envs.pythonProjects": [],
     "conventionalCommits.scopes": [
         "summarizer",
-        "validation"
+        "validation",
+        "scrapers"
     ]
 }
