@@ -31,7 +31,9 @@ def validation_gpt_chat():
     response = openai.chat.completions.create(model="gpt-4o-mini", messages=[{"role":"user", "content":message}])
     print(response.choices[0].message.content)
 
+# Summarization logic
 
+# Define system and user prompts
 system_prompt = "You are an assistant that analyzes the contents of a website \
 and provides a short summary, ignoring text that might be navigation related. \
 Respond in markdown."
@@ -44,12 +46,13 @@ If it includes news or announcements, then summarize these too.\n\n"
     user_prompt += website.text
     return user_prompt
 
+# Construct messages for the chat completion
 def messages_for(website):
     return [
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": user_prompt_for(website)}
     ]
-
+# Summarize function ß
 def summarize(url):
     website = Website(url)
     response = openai.chat.completions.create(
